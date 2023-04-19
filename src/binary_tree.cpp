@@ -11,22 +11,24 @@ binary_tree::~binary_tree()
 	clear();
 }
 
-void binary_tree::insert_node(int value)
+void binary_tree::insert_node(std::pair<int, int> pair_first, std::pair<int, int> pair_second)
 {
+	int min_value = std::min(pair_first.first, pair_second.first);
+
 	if (head == nullptr)
 	{
-		head = new binary_tree_node(value);
+		head = new binary_tree_node(pair_first, pair_second);
 	}
 	else
 	{
 		binary_tree_node* current = head;
 		while (true)
 		{
-			if (value < current->value)
+			if (min_value < current->value)
 			{
 				if (current->left == nullptr)
 				{
-					current->left = new binary_tree_node(value);
+					current->left = new binary_tree_node(pair_first, pair_second);
 					break;
 				}
 				else
@@ -34,23 +36,14 @@ void binary_tree::insert_node(int value)
 					current = current->left;
 				}
 			}
-			else if (value > current->value)
+			else if (min_value > current->value)
 			{
-				if (current->right == nullptr)
-				{
-					current->right = new binary_tree_node(value);
-					break;
-				}
-				else
-				{
-					current = current->right;
-				}
-			}
-			else
-			{
-				current->right = new binary_tree_node(value);
+				current->value = std::max(current->data[0].first, current->data[1].first);
+				current->right = new binary_tree_node(pair_first, pair_second);
 				break;
 			}
+			else
+				break;
 		}
 	}
 }

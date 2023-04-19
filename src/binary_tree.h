@@ -11,7 +11,7 @@ public:
 	binary_tree();
 	~binary_tree();
 
-	void insert_node(int value);
+	void insert_node(std::pair<int, int> pair_first, std::pair<int, int> pair_second);
 	bool find_node(int value);
 	void clear();
 
