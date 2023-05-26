@@ -4,7 +4,7 @@
 # Build
 
 ```
-git clone -b branch_and_bound https://github.com/hhwrxhh/mmeo.git
+git clone -b investment_ https://github.com/hhwrxhh/mmeo.git
 cd mmeo
 mkdir build
 cd build
