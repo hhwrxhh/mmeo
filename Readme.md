@@ -4,7 +4,7 @@
 # Build
 
 ```
-git clone -b investment_ https://github.com/hhwrxhh/mmeo.git
+git clone -b investment_task https://github.com/hhwrxhh/mmeo.git
 cd mmeo
 mkdir build
 cd build
